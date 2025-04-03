@@ -3,6 +3,8 @@ import MainPage from "../pages/MainPage";
 import SearchPage from "../pages/SearchPage";
 import DetailPage from "../pages/DetailPage";
 import WriteReviewPage from "../pages/WriteReviwPage";
+import LoginPage from "../pages/LoginPage";
+import SignUpPage from "../pages/SignUpPage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
     path: "write-review",
     element: <WriteReviewPage />
+  },
+  {
+    path: "login",
+    element: <LoginPage />
+  },
+  {
+    path: "sign-up",
+    element: <SignUpPage />
   }
 ]);
 
