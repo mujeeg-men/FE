@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import Background from "../components/Common/Background";
 import Calendar from "@components/MainPage/Calendar";
+import BookCarousel from "@/components/MainPage/BookCarousel";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ const MainPage = () => {
         </button>
       </div>
       <Calendar />
+      <BookCarousel />
     </Background>
   );
 };

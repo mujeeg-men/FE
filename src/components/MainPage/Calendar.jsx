@@ -85,6 +85,23 @@ const Calendar = () => {
   return (
     <div>
       <div>
+        <div>
+          <button
+            onClick={() => {
+              handlePrevMonth();
+            }}
+          >
+            ⬅️
+          </button>
+          <span>{`${currentDate.getFullYear()}년 ${currentDate.getMonth()+1}월`}</span>
+          <button
+            onClick={() => {
+              handleNextMonth();
+            }}
+          >
+            ➡️
+          </button>
+        </div>
         <CalendarWeekWrapper>
           {days.map((day) => (
             <CalendarDateWrapper>{day}</CalendarDateWrapper>
