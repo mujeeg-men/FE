@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router';
 import router from './routes/routes';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faSearch)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <RouterProvider router={router} />

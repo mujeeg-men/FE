@@ -1,8 +1,8 @@
 import { SearchItemContainer, SearchItemWrapper } from "./SearchItem.style";
 
-const SearchItem = ({ title, story, detail, imageUrl }) => {
+const SearchItem = ({id, title, story, detail, imageUrl, navigate }) => {
   return (
-    <SearchItemContainer>
+    <SearchItemContainer onClick={()=>{navigate(`${id}`)}}>
       <div style={{display: 'flex', gap: "12px"}}>
         <div>
           <img src={imageUrl} style={{ width: "150px" }} alt="" />

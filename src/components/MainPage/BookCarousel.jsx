@@ -7,6 +7,7 @@ import {
   BookCarouselWrapper,
 } from "./BookCarousel.style";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const BookCarousel = () => {
   const splitIntoChunk = (arr, chunk) => {
@@ -19,6 +20,8 @@ const BookCarousel = () => {
 
   const [nowBookDataIndex, setNowBookDataIndex] = useState(0);
   const bookCarouselData = splitIntoChunk(bookData, 5);
+  
+  const navigate = useNavigate();
 
   const handlePlusBookDataIndex = () => {
     if (nowBookDataIndex < bookCarouselData.length - 1) {
@@ -53,6 +56,7 @@ const BookCarousel = () => {
               <BookCarouselItemWrapper
                 key={idx}
                 style={{ textAlign: "center" }}
+                onClick={()=>{navigate(`/search/${book.id}`)}}
               >
                 <img style={{ width: "200px" }} src={book.imageUrl} alt="" />
                 <span>{book.title}</span>

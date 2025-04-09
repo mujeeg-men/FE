@@ -22,13 +22,6 @@ const MainPage = () => {
         </button>
         <button
           onClick={() => {
-            goToPage("/search/1");
-          }}
-        >
-          상세 페이지
-        </button>
-        <button
-          onClick={() => {
             goToPage("/write-review");
           }}
         >

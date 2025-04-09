@@ -12,23 +12,23 @@ const router = createBrowserRouter([
     element: <MainPage />,
   },
   {
-    path: "search",
+    path: "/search",
     element: <SearchPage />,
   },
   {
-    path: "search/:bookId",
+    path: "/search/:bookId",
     element: <DetailPage />
   },
   {
-    path: "write-review",
+    path: "/write-review",
     element: <WriteReviewPage />
   },
   {
-    path: "login",
+    path: "/login",
     element: <LoginPage />
   },
   {
-    path: "sign-up",
+    path: "/sign-up",
     element: <SignUpPage />
   }
 ]);
