@@ -8,6 +8,7 @@ import Input from "../Common/Input";
 import Button from "../Common/Button";
 import { SIGNUP_VALIDATION_MESSAGES } from "@/constants/validationMessage";
 import { useState } from "react";
+import CheckInput from "../Common/CheckInput";
 
 const SignUpPageComponents = () => {
   // 이메일 밸리데이션 함수
@@ -42,14 +43,17 @@ const SignUpPageComponents = () => {
     return "";
   };
 
+  const validateNickname = (value) => {};
+
   const emailInput = useInput("", validateEmail);
   const passwordInput = useInput("", validatePassword);
   const passwordCheckInput = useInput("", validatePasswordCheck);
+  const [nickname, setNickname] = useState("");
 
   return (
     <LoginSignUpInputWrapper>
       <span>회원가입</span>
-      <Input
+      <CheckInput
         value={emailInput.value}
         onChange={emailInput.onChange}
         label="이메일"
@@ -73,6 +77,16 @@ const SignUpPageComponents = () => {
         isValidation={passwordCheckInput.isError}
         validationText={passwordCheckInput.error}
         type="password"
+      />
+
+      <CheckInput
+        value={nickname}
+        onChange={(e) => {
+          setNickname(e.target.value);
+        }}
+        label={"닉네임"}
+        isValidation={true}
+        validationText={SIGNUP_VALIDATION_MESSAGES.duplicatedNickname}
       />
 
       <Terms>{`이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n이용약관~~~~~~\n`}</Terms>
