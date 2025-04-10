@@ -10,7 +10,11 @@ const LoginPageComponents = () => {
   return (
     <LoginSignUpInputWrapper>
       <span>로그인</span>
-      <Input value={loginId} onChange={setLoginId} label={"이메일"} />
+      <Input
+        value={loginId}
+        onChange={setLoginId}
+        label={"이메일"}
+       />
       <Input
         value={loginPassword}
         onChange={setLoginPassword}

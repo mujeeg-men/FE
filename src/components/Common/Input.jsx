@@ -1,9 +1,9 @@
-const Input = ({ value, onChange, label }) => {
+const Input = ({ value, onChange, label, isValidation=false, validationText, type="text" }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "4px", width: "100%" }}>
       <span>{label}</span>
       <input
-        type="text"
+        type={type}
         value={value}
         onChange={onChange}
         style={{
@@ -13,6 +13,7 @@ const Input = ({ value, onChange, label }) => {
           width: '100%'
         }}
       />
+      <span style={{height: 16, color: 'red'}}>{isValidation && validationText }</span>
     </div>
   );
 };
