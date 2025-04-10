@@ -1,6 +1,6 @@
 const Input = ({ value, onChange, label }) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "4px", width: "100%" }}>
       <span>{label}</span>
       <input
         type="text"
@@ -10,6 +10,7 @@ const Input = ({ value, onChange, label }) => {
           padding: "10px",
           borderRadius: "5px",
           border: "1px solid gray",
+          width: '100%'
         }}
       />
     </div>

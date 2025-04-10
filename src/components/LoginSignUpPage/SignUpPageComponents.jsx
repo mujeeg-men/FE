@@ -1,8 +1,9 @@
 import useInput from "../../hooks/useInput";
 
-import { SingUpInputWrapper } from "./SignUpPageComponents.style";
+import { LoginSignUpInputWrapper } from "./LoginSignUpCommon.style";
 
 import Input from "../Common/Input";
+import Button from "../Common/Button";
 
 const SignUpPageComponents = () => {
   const [signUpId, setSignUpId] = useInput("");
@@ -10,9 +11,9 @@ const SignUpPageComponents = () => {
   const [signUpPasswordCheck, setSignUpPasswordCheck] = useInput("");
 
   return (
-    <SingUpInputWrapper>
+    <LoginSignUpInputWrapper>
       <span>회원가입</span>
-      <Input value={signUpId} onChange={setSignUpId} label={"아이디"} />
+      <Input value={signUpId} onChange={setSignUpId} label={"이메일"} />
       <Input
         value={signUpPassword}
         onChange={setSignUpPassword}
@@ -23,14 +24,14 @@ const SignUpPageComponents = () => {
         onChange={setSignUpPasswordCheck}
         label={"비밀번호 확인"}
       />
-      <button
+      <Button
         onClick={() => {
           console.log(signUpId, signUpPassword, signUpPasswordCheck);
         }}
       >
-        임시
-      </button>
-    </SingUpInputWrapper>
+        회원가입하기
+      </Button>
+    </LoginSignUpInputWrapper>
   );
 };
 
