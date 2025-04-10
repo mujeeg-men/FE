@@ -12,8 +12,9 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch, faChevronLeft, faChevronRight);
+library.add(faSearch, faChevronLeft, faChevronRight, faX);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={router} />);
