@@ -1,9 +1,15 @@
 import { useNavigate } from "react-router";
 import { HeaderContainer } from "./Header.style";
+import BeforeLoginHeaderUi from "./BeforeLoginHeaderUi";
+import AfterLoginHeaderUi from "./AfterLoginHeaderUi";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 const Header = () => {
   const navigate = useNavigate();
+
+  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <HeaderContainer>
@@ -11,7 +17,7 @@ const Header = () => {
         onClick={() => {
           navigate("/");
         }}
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer", flex: 1 }}
       >
         Share Book
       </i>
@@ -19,6 +25,7 @@ const Header = () => {
         style={{
           position: "relative",
           // cursor: "pointer"
+          flex: 1,
         }}
       >
         <input
@@ -36,8 +43,9 @@ const Header = () => {
           color="gray"
         />
       </div>
-      <span>메뉴1</span>
-      <span>메뉴2</span>
+      <div style={{ flex: 2 }}>
+        {isLogin ? <AfterLoginHeaderUi /> : <BeforeLoginHeaderUi navigate={navigate} />}
+      </div>
     </HeaderContainer>
   );
 };
