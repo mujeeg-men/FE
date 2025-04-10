@@ -27,20 +27,6 @@ const MainPage = () => {
         >
           리뷰 작성 페이지
         </button>
-        <button
-          onClick={() => {
-            goToPage("/login");
-          }}
-        >
-          로그인 페이지
-        </button>
-        <button
-          onClick={() => {
-            goToPage("/sign-up");
-          }}
-        >
-          회원가입 페이지
-        </button>
       </div>
       <Calendar />
       <BookCarousel />

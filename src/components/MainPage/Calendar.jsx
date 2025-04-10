@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
-import { CalendarDateWrapper, CalendarWeekWrapper } from "./Calendar.style";
+import {
+  CalendarArrow,
+  CalendarContainer,
+  CalendarDateWrapper,
+  CalendarWeekWrapper,
+} from "./Calendar.style";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Calendar = () => {
   const days = ["일", "월", "화", "수", "목", "금", "토"];
@@ -28,7 +39,8 @@ const Calendar = () => {
 
     // 시작 날짜부터 끝 날짜까지 반복
     while (currentDate <= endDay) {
-      currentWeek.push(new Date(currentDate)); // 현재 날짜를 현재 주에 추가
+      // 배열로 push 한 건 현재 달과 전 달 다음 달 구분을 위해 넣음
+      currentWeek.push([new Date(currentDate), 0]); // 현재 날짜를 현재 주에 추가
       // 현재 주가 7일을 모두 채웠거나 현재 날짜가 토요일인 경우
       if (currentWeek.length === 7 || currentDate.getDay() === 6) {
         weeks.push(currentWeek); // 완성된 주를 weeks 배열에 추가
@@ -41,7 +53,8 @@ const Calendar = () => {
     if (weeks[0].length < 7) {
       let tempDate = 0;
       while (weeks[0].length !== 7) {
-        weeks[0] = [new Date(year, month, tempDate), ...weeks[0]];
+        // 배열로 push 한 건 현재 달과 전 달 다음 달 구분을 위해 넣음
+        weeks[0] = [[new Date(year, month, tempDate), 1], ...weeks[0]];
         tempDate--;
       }
     }
@@ -49,18 +62,15 @@ const Calendar = () => {
     // 마지막 주 처리 (만약 남아있다면)
     if (currentWeek.length > 0) {
       // 다음 달 날짜까지
-      if (month > 11) {
-        let tempDate = 1;
-        while (currentWeek.length !== 7) {
-          currentWeek.push(new Date(year + 1, 0, tempDate));
-          tempDate++;
+      let tempDate = 1;
+      while (currentWeek.length !== 7) {
+        // 배열로 push 한 건 현재 달과 전 달 다음 달 구분을 위해 넣음
+        if (month > 11) {
+          currentWeek.push([new Date(year + 1, 0, tempDate), 1]);
+        } else {
+          currentWeek.push([new Date(year, month + 1, tempDate), 1]);
         }
-      } else {
-        let tempDate = 1;
-        while (currentWeek.length !== 7) {
-          currentWeek.push(new Date(year, month + 1, tempDate));
-          tempDate++;
-        }
+        tempDate++;
       }
       weeks.push(currentWeek); // 남아 있는 날짜가 있다면 마지막 주로 weeks에 추가
     }
@@ -83,45 +93,57 @@ const Calendar = () => {
   };
 
   return (
-    <div>
-      <div>
-        <div>
-          <button
-            onClick={() => {
-              handlePrevMonth();
-            }}
-          >
-            ⬅️
-          </button>
-          <span>{`${currentDate.getFullYear()}년 ${currentDate.getMonth()+1}월`}</span>
-          <button
-            onClick={() => {
-              handleNextMonth();
-            }}
-          >
-            ➡️
-          </button>
-        </div>
-        <CalendarWeekWrapper>
-          {days.map((day) => (
-            <CalendarDateWrapper>{day}</CalendarDateWrapper>
-          ))}
-        </CalendarWeekWrapper>
-        {groupDatesByWeek(firstDayOfMonth, lastDayOfMonth).map((week) => {
-          return (
-            <CalendarWeekWrapper key={week}>
-              {week.map((date) => {
-                return (
-                  <CalendarDateWrapper key={date}>
-                    {date.getDate()}
-                  </CalendarDateWrapper>
-                );
-              })}
-            </CalendarWeekWrapper>
-          );
-        })}
+    <CalendarContainer>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <CalendarArrow
+          onClick={() => {
+            handlePrevMonth();
+          }}
+        >
+          <FontAwesomeIcon icon={faChevronLeft} size="xl" color="gray" />
+        </CalendarArrow>
+        <span>{`${currentDate.getFullYear()}년 ${
+          currentDate.getMonth() + 1
+        }월`}</span>
+        <CalendarArrow
+          onClick={() => {
+            handleNextMonth();
+          }}
+        >
+          <FontAwesomeIcon icon={faChevronRight} size="xl" color="gray" />
+        </CalendarArrow>
       </div>
-    </div>
+
+      <CalendarWeekWrapper>
+        {days.map((day) => (
+          <CalendarDateWrapper style={{ pointerEvents: "none" }}>
+            <span>{day}</span>
+          </CalendarDateWrapper>
+        ))}
+      </CalendarWeekWrapper>
+      {groupDatesByWeek(firstDayOfMonth, lastDayOfMonth).map((week) => {
+        return (
+          <CalendarWeekWrapper key={week}>
+            {week.map((date) => {
+              return (
+                <CalendarDateWrapper
+                  key={date}
+                  style={{ color: date[1] === 1 && "gray" }}
+                >
+                  <span>{date[0].getDate()}</span>
+                </CalendarDateWrapper>
+              );
+            })}
+          </CalendarWeekWrapper>
+        );
+      })}
+    </CalendarContainer>
   );
 };
 
