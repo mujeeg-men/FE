@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "./Header/Header";
 import { CommonLayout } from "./Common.style";
 import { BackgroundContainer } from "./Background.style";
 

@@ -1,5 +1,5 @@
 import Background from "../components/Common/Background";
-import SignUpPageComponents from "@/components/SignUpPage/SignUpPageComponents";
+import SignUpPageComponents from "@/components/LoginSignUpPage/SignUpPageComponents";
 
 const SignUpPage = () => {
   return (
