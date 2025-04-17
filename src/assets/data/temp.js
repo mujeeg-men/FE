@@ -162,19 +162,19 @@ export const feelData = [
   },
   {
     feelDate: "2025-04-14 16:02",
-    bookTitle: "노르웨이의 숲",
+    bookTitle: "지적대화를 위한 넓고 얕은 지식1",
     pageCount: "155",
     feelContents: "오늘은 많이 읽음",
   },
   {
     feelDate: "2025-04-16 16:02",
-    bookTitle: "노르웨이의 숲",
+    bookTitle: "CODE",
     pageCount: "155",
     feelContents: "오늘은 많이 읽음",
   },
   {
     feelDate: "2025-04-17 16:02",
-    bookTitle: "노르웨이의 숲",
+    bookTitle: "마흔에 읽는 니체",
     pageCount: "155",
     feelContents: "오늘은 많이 읽음",
   },

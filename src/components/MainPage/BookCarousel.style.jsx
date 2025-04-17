@@ -19,6 +19,7 @@ export const BookCarouselWrapper = styled.div`
 `;
 
 export const BookCarouselItemWrapper = styled.div`
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;

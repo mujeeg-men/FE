@@ -4,19 +4,24 @@ import Calendar from "@components/MainPage/Calendar";
 import BookCarousel from "@/components/MainPage/BookCarousel";
 import FeelModal from "@/components/MainPage/FeelModal";
 import { useState } from "react";
+import MonthlyStatistics from "@/components/MainPage/MonthlyStatistics";
+
+import { feelData } from "@/assets/data/temp";
+import DailyStatistics from "@/components/MainPage/DailyStatistics";
 
 const MainPage = () => {
   const navigate = useNavigate();
 
   const [isModal, setIsModal] = useState(false);
+  const [pickDate, setPickDate] = useState(null);
 
   const goToPage = (name) => {
     navigate(name);
   };
 
-  const closeModal = ()=>{
+  const closeModal = () => {
     setIsModal(false);
-  }
+  };
 
   return (
     <Background>
@@ -35,11 +40,24 @@ const MainPage = () => {
         >
           리뷰 작성 페이지
         </button>
-        <button onClick={()=>{setIsModal(true)}}>소감 모달 오픈</button>
+        <button
+          onClick={() => {
+            setIsModal(true);
+          }}
+        >
+          소감 모달 오픈
+        </button>
       </div>
 
       {isModal && <FeelModal closeModal={closeModal} />}
-      <Calendar />
+      <div style={{ display: "flex", marginBottom: 30 }}>
+        <Calendar setPickDate={setPickDate} />
+        {pickDate == null ? (
+          <MonthlyStatistics feelData={feelData} />
+        ) : (
+          <DailyStatistics pickDate={pickDate} />
+        )}
+      </div>
       <BookCarousel />
     </Background>
   );
