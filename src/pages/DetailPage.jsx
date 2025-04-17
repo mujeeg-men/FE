@@ -7,12 +7,12 @@ import { useParams } from "react-router";
 
 const DetailPage = ()=>{
     const {bookId} = useParams()
-    const data = bookData.find(item => item.id==Number(bookId))
+    const data = bookData.find(item => item.id===Number(bookId))
 
     return (
         <Background>
             <DetailPageInfo data={data} />
-            <BookReview />
+            <BookReview reviewData={data.reviewData} />
         </Background>
     )
 }

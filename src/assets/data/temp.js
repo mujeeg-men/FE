@@ -9,6 +9,40 @@ export const bookData = [
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
     imageUrl: bookImage,
+    reviewData: [
+      {
+        bookTitle: "노르웨이의 숲",
+        reviewTitle: "독후감의 제목이야~~~~~1111",
+        reviewContents:
+          "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+        nickname: "admin",
+        date: "2025.04.16 15:55",
+      },
+      {
+        bookTitle: "노르웨이의 숲",
+        reviewTitle: "독후감의 제목이야~~~~~22222",
+        reviewContents:
+          "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+        nickname: "admin",
+        date: "2025.04.16 15:55",
+      },
+      {
+        bookTitle: "노르웨이의 숲",
+        reviewTitle: "독후감의 제목이야~~~~~3333",
+        reviewContents:
+          "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+        nickname: "admin",
+        date: "2025.04.16 15:55",
+      },
+      {
+        bookTitle: "노르웨이의 숲",
+        reviewTitle: "독후감의 제목이야~~~~~4444",
+        reviewContents:
+          "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+        nickname: "admin",
+        date: "2025.04.16 15:55",
+      },
+    ],
   },
   {
     id: 2,
@@ -17,6 +51,40 @@ export const bookData = [
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
     imageUrl: bookImage,
+    reviewData: [
+      {
+        bookTitle: "노르웨이의 숲",
+        reviewTitle: "독후감의 제목이야~~~~~1111",
+        reviewContents:
+          "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+        nickname: "admin",
+        date: "2025.04.16 15:55",
+      },
+      {
+        bookTitle: "노르웨이의 숲",
+        reviewTitle: "독후감의 제목이야~~~~~22222",
+        reviewContents:
+          "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+        nickname: "admin",
+        date: "2025.04.16 15:55",
+      },
+      {
+        bookTitle: "노르웨이의 숲",
+        reviewTitle: "독후감의 제목이야~~~~~3333",
+        reviewContents:
+          "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+        nickname: "admin",
+        date: "2025.04.16 15:55",
+      },
+      {
+        bookTitle: "노르웨이의 숲",
+        reviewTitle: "독후감의 제목이야~~~~~4444",
+        reviewContents:
+          "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+        nickname: "admin",
+        date: "2025.04.16 15:55",
+      },
+    ],
   },
   {
     id: 3,
@@ -84,37 +152,37 @@ export const bookData = [
   },
 ];
 
-export const reviewData = [
-  {
-    bookTitle: "노르웨이의 숲",
-    reviewTitle: "독후감의 제목이야~~~~~",
-    reviewContents:
-      "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
-    nickname: "admin",
-    date: "2025.04.16 15:55",
-  },
-  {
-    bookTitle: "노르웨이의 숲",
-    reviewTitle: "독후감의 제목이야~~~~~",
-    reviewContents:
-      "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
-    nickname: "admin",
-    date: "2025.04.16 15:55",
-  },
-  {
-    bookTitle: "노르웨이의 숲",
-    reviewTitle: "독후감의 제목이야~~~~~",
-    reviewContents:
-      "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
-    nickname: "admin",
-    date: "2025.04.16 15:55",
-  },
-  {
-    bookTitle: "노르웨이의 숲",
-    reviewTitle: "독후감의 제목이야~~~~~",
-    reviewContents:
-      "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
-    nickname: "admin",
-    date: "2025.04.16 15:55",
-  },
-];
+// export const reviewData = [
+//   {
+//     bookTitle: "노르웨이의 숲",
+//     reviewTitle: "독후감의 제목이야~~~~~",
+//     reviewContents:
+//       "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+//     nickname: "admin",
+//     date: "2025.04.16 15:55",
+//   },
+//   {
+//     bookTitle: "노르웨이의 숲",
+//     reviewTitle: "독후감의 제목이야~~~~~",
+//     reviewContents:
+//       "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+//     nickname: "admin",
+//     date: "2025.04.16 15:55",
+//   },
+//   {
+//     bookTitle: "노르웨이의 숲",
+//     reviewTitle: "독후감의 제목이야~~~~~",
+//     reviewContents:
+//       "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+//     nickname: "admin",
+//     date: "2025.04.16 15:55",
+//   },
+//   {
+//     bookTitle: "노르웨이의 숲",
+//     reviewTitle: "독후감의 제목이야~~~~~",
+//     reviewContents:
+//       "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
+//     nickname: "admin",
+//     date: "2025.04.16 15:55",
+//   },
+// ];
