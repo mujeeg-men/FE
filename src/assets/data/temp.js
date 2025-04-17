@@ -16,7 +16,7 @@ export const bookData = [
         reviewContents:
           "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
         nickname: "admin",
-        date: "2025.04.16 15:55",
+        date: "2025-04-16 15:55",
       },
       {
         bookTitle: "노르웨이의 숲",
@@ -24,7 +24,7 @@ export const bookData = [
         reviewContents:
           "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
         nickname: "admin",
-        date: "2025.04.16 15:55",
+        date: "2025-04-16 15:55",
       },
       {
         bookTitle: "노르웨이의 숲",
@@ -32,7 +32,7 @@ export const bookData = [
         reviewContents:
           "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
         nickname: "admin",
-        date: "2025.04.16 15:55",
+        date: "2025-04-16 15:55",
       },
       {
         bookTitle: "노르웨이의 숲",
@@ -40,7 +40,7 @@ export const bookData = [
         reviewContents:
           "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
         nickname: "admin",
-        date: "2025.04.16 15:55",
+        date: "2025-04-16 15:55",
       },
     ],
   },
@@ -58,7 +58,7 @@ export const bookData = [
         reviewContents:
           "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
         nickname: "admin",
-        date: "2025.04.16 15:55",
+        date: "2025-04-16 15:55",
       },
       {
         bookTitle: "노르웨이의 숲",
@@ -66,7 +66,7 @@ export const bookData = [
         reviewContents:
           "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
         nickname: "admin",
-        date: "2025.04.16 15:55",
+        date: "2025-04-16 15:55",
       },
       {
         bookTitle: "노르웨이의 숲",
@@ -74,7 +74,7 @@ export const bookData = [
         reviewContents:
           "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
         nickname: "admin",
-        date: "2025.04.16 15:55",
+        date: "2025-04-16 15:55",
       },
       {
         bookTitle: "노르웨이의 숲",
@@ -82,7 +82,7 @@ export const bookData = [
         reviewContents:
           "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
         nickname: "admin",
-        date: "2025.04.16 15:55",
+        date: "2025-04-16 15:55",
       },
     ],
   },
@@ -152,6 +152,34 @@ export const bookData = [
   },
 ];
 
+// 소감 데이터
+export const feelData = [
+  {
+    feelDate: "2025-04-13 16:02",
+    bookTitle: "노르웨이의 숲",
+    pageCount: "155",
+    feelContents: "오늘은 많이 읽음",
+  },
+  {
+    feelDate: "2025-04-14 16:02",
+    bookTitle: "노르웨이의 숲",
+    pageCount: "155",
+    feelContents: "오늘은 많이 읽음",
+  },
+  {
+    feelDate: "2025-04-16 16:02",
+    bookTitle: "노르웨이의 숲",
+    pageCount: "155",
+    feelContents: "오늘은 많이 읽음",
+  },
+  {
+    feelDate: "2025-04-17 16:02",
+    bookTitle: "노르웨이의 숲",
+    pageCount: "155",
+    feelContents: "오늘은 많이 읽음",
+  },
+];
+
 // export const reviewData = [
 //   {
 //     bookTitle: "노르웨이의 숲",
@@ -159,7 +187,7 @@ export const bookData = [
 //     reviewContents:
 //       "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
 //     nickname: "admin",
-//     date: "2025.04.16 15:55",
+//     date: "2025-04-16 15:55",
 //   },
 //   {
 //     bookTitle: "노르웨이의 숲",
@@ -167,7 +195,7 @@ export const bookData = [
 //     reviewContents:
 //       "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
 //     nickname: "admin",
-//     date: "2025.04.16 15:55",
+//     date: "2025-04-16 15:55",
 //   },
 //   {
 //     bookTitle: "노르웨이의 숲",
@@ -175,7 +203,7 @@ export const bookData = [
 //     reviewContents:
 //       "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
 //     nickname: "admin",
-//     date: "2025.04.16 15:55",
+//     date: "2025-04-16 15:55",
 //   },
 //   {
 //     bookTitle: "노르웨이의 숲",
@@ -183,6 +211,6 @@ export const bookData = [
 //     reviewContents:
 //       "독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n독후감의 내용이야~~~~\n",
 //     nickname: "admin",
-//     date: "2025.04.16 15:55",
+//     date: "2025-04-16 15:55",
 //   },
 // ];
