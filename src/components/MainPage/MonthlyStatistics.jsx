@@ -3,16 +3,33 @@ import BookCarousel from "./BookCarousel";
 
 import COLOR from "@/constants/color";
 
-const MonthlyStatistics = ({feelData}) => {
+const MonthlyStatistics = ({ feelData, setIsModal }) => {
   return (
     <StatisticsContainer>
       <div>
         <span>읽은 책 목록</span>
         <BookCarousel />
       </div>
-
-      <span>소감문</span>
-      <div style={{overflow: 'auto', height: 200}}>
+      <div style={{display: "flex", alignItems: 'center'}}>
+        <span>소감문</span>
+        <button
+          style={{
+            backgroundColor: COLOR.gray,
+            borderRadius: "50%",
+            width: 25,
+            height: 25,
+            display: "inline-block",
+            textAlign: "center",
+            border: 'none',
+            cursor: 'pointer',
+            // color: 'white'
+          }}
+          onClick={()=>{setIsModal(true)}}
+        >
+          +
+        </button>
+      </div>
+      <div style={{ overflow: "auto", height: 200 }}>
         {feelData.map((item, index) => {
           return <FeelItem data={item} />;
         })}
@@ -23,9 +40,10 @@ const MonthlyStatistics = ({feelData}) => {
 
 const FeelItem = ({ data, index }) => {
   return (
-    <div key={index} style={{padding: '10px 0'}}>
+    <div key={index} style={{ padding: "10px 0" }}>
       <div>
-        <span>{data.bookTitle}</span> <span style={{color: COLOR.gray}}>{data.feelDate}</span>
+        <span>{data.bookTitle}</span>{" "}
+        <span style={{ color: COLOR.gray }}>{data.feelDate}</span>
       </div>
 
       <div>

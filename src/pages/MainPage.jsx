@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import Background from "../components/Common/Background";
 import Calendar from "@components/MainPage/Calendar";
 import BookCarousel from "@/components/MainPage/BookCarousel";
-import FeelModal from "@/components/MainPage/FeelModal";
+import FeelModal from "@/components/MainPage/FeelModal/FeelModal";
 import { useState } from "react";
 import MonthlyStatistics from "@/components/MainPage/MonthlyStatistics";
 
@@ -40,22 +40,15 @@ const MainPage = () => {
         >
           리뷰 작성 페이지
         </button>
-        <button
-          onClick={() => {
-            setIsModal(true);
-          }}
-        >
-          소감 모달 오픈
-        </button>
       </div>
 
       {isModal && <FeelModal closeModal={closeModal} />}
       <div style={{ display: "flex", marginBottom: 30 }}>
         <Calendar setPickDate={setPickDate} />
         {pickDate == null ? (
-          <MonthlyStatistics feelData={feelData} />
+          <MonthlyStatistics feelData={feelData} setIsModal={setIsModal} />
         ) : (
-          <DailyStatistics pickDate={pickDate} />
+          <DailyStatistics pickDate={pickDate} setPickDate={setPickDate} />
         )}
       </div>
       <BookCarousel />

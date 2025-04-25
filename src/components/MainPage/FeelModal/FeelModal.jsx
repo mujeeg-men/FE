@@ -1,5 +1,6 @@
 import { faX } from "@fortawesome/free-solid-svg-icons";
-import Input from "../Common/Input";
+import Input from "../../Common/Input";
+import ModalSearch from "./ModalSearch";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
@@ -50,6 +51,7 @@ const FeelModal = ({ closeModal }) => {
           }}
           onClick={closeModal}
         />
+        <ModalSearch />
         <Input label={"읽은 페이지 수"}></Input>
         <Input label={"소감"}></Input>
       </div>
