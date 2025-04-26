@@ -17,7 +17,7 @@ const BookReview = ({ reviewData }) => {
           독후감 쓰러가기
         </Button>
       </div>
-      {reviewData.map((item, index) => {
+      {reviewData?.map((item, index) => {
         return (
           <BookReviewItem
             onClick={() => {

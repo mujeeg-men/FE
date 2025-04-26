@@ -5,6 +5,9 @@ export const bookData = [
   {
     id: 1,
     title: "노르웨이의 숲",
+    author: "응기잇",
+    publisher: '민음사',
+    price: '15000',
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
@@ -48,6 +51,9 @@ export const bookData = [
     id: 2,
     title: "노르웨이의 숲",
     story: "이러한 내용이야~~~",
+    author: "응기잇",
+    publisher: '민음사',
+    price: '15000',
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
     imageUrl: bookImage,
@@ -90,6 +96,9 @@ export const bookData = [
     id: 3,
     title: "노르웨이의 숲",
     story: "이러한 내용이야~~~",
+    author: "응기잇",
+    publisher: '민음사',
+    price: '15000',
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
     imageUrl: bookImage,
@@ -97,6 +106,9 @@ export const bookData = [
   {
     id: 4,
     title: "노르웨이의 숲",
+    author: "응기잇",
+    publisher: '민음사',
+    price: '15000',
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
@@ -105,6 +117,9 @@ export const bookData = [
   {
     id: 5,
     title: "노르웨이의 숲",
+    author: "응기잇",
+    publisher: '민음사',
+    price: '15000',
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",

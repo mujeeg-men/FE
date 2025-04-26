@@ -27,12 +27,13 @@ const SearchPage = () => {
           filteredData.map((item) => {
             return (
               <SearchItem
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                story={item.story}
-                detail={item.detail}
-                imageUrl={item.imageUrl}
+              data={item}
+                // key={item.id}
+                // id={item.id}
+                // title={item.title}
+                // story={item.story}
+                // detail={item.detail}
+                // imageUrl={item.imageUrl}
                 navigate={navigate}
               />
             );

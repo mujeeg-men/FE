@@ -25,15 +25,6 @@ const MainPage = () => {
 
   return (
     <Background>
-      <div>
-        <button
-          onClick={() => {
-            goToPage("/write-review");
-          }}
-        >
-          리뷰 작성 페이지
-        </button>
-      </div>
 
       {isModal && <FeelModal closeModal={closeModal} />}
       <div style={{ display: "flex", marginBottom: 30 }}>
