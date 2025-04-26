@@ -28,13 +28,6 @@ const MainPage = () => {
       <div>
         <button
           onClick={() => {
-            goToPage("/search");
-          }}
-        >
-          검색 결과 페이지
-        </button>
-        <button
-          onClick={() => {
             goToPage("/write-review");
           }}
         >
