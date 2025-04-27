@@ -64,7 +64,7 @@ const Header = () => {
         />
       </div>
       <div style={{ flex: 2 }}>
-        {isLogin ? <AfterLoginHeaderUi /> : <BeforeLoginHeaderUi navigate={navigate} />}
+        {isLogin ? <AfterLoginHeaderUi navigate={navigate} /> : <BeforeLoginHeaderUi navigate={navigate} />}
       </div>
     </HeaderContainer>
   );

@@ -2,6 +2,8 @@ import { StatisticsContainer } from "./Statistics.style";
 import BookCarousel from "./BookCarousel";
 
 import COLOR from "@/constants/color";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const MonthlyStatistics = ({ feelData, setIsModal }) => {
   return (
@@ -10,7 +12,7 @@ const MonthlyStatistics = ({ feelData, setIsModal }) => {
         <span>읽은 책 목록</span>
         <BookCarousel />
       </div>
-      <div style={{display: "flex", alignItems: 'center'}}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <span>소감문</span>
         <button
           style={{
@@ -18,15 +20,19 @@ const MonthlyStatistics = ({ feelData, setIsModal }) => {
             borderRadius: "50%",
             width: 25,
             height: 25,
-            display: "inline-block",
-            textAlign: "center",
-            border: 'none',
-            cursor: 'pointer',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            border: "none",
+            cursor: "pointer",
+
             // color: 'white'
           }}
-          onClick={()=>{setIsModal(true)}}
+          onClick={() => {
+            setIsModal(true);
+          }}
         >
-          +
+          <FontAwesomeIcon icon={faPlus} />
         </button>
       </div>
       <div style={{ overflow: "auto", height: 200 }}>
@@ -38,7 +44,7 @@ const MonthlyStatistics = ({ feelData, setIsModal }) => {
   );
 };
 
-const FeelItem = ({ data, index }) => {
+export const FeelItem = ({ data, index }) => {
   return (
     <div key={index} style={{ padding: "10px 0" }}>
       <div>
