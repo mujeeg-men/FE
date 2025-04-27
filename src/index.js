@@ -13,8 +13,10 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeartPulse } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch, faChevronLeft, faChevronRight, faX);
+library.add(faSearch, faChevronLeft, faChevronRight, faX, faHeart, faHeartPulse);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={router} />);

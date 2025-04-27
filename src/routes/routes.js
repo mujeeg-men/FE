@@ -5,6 +5,9 @@ import DetailPage from "../pages/DetailPage";
 import WriteReviewPage from "../pages/WriteReviwPage";
 import LoginPage from "../pages/LoginPage";
 import SignUpPage from "../pages/SignUpPage";
+import InterestBookPage from "@/pages/InterestBookPage";
+import ReviewDetailPage from "@/pages/ReviewDetailPage";
+import ProfilePage from "@/pages/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +33,20 @@ const router = createBrowserRouter([
   {
     path: "/sign-up",
     element: <SignUpPage />
-  }
+  },
+  {
+    path: "/interest-book",
+    element: <InterestBookPage />
+  },
+  {
+    path: "/review-detail/:reviewId",
+    element: <ReviewDetailPage />
+  },
+  {
+    path: "/profile",
+    element: <ProfilePage />
+  },
+
 ]);
 
 export default router

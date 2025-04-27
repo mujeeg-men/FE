@@ -9,7 +9,21 @@ import { useState } from "react";
 const Header = () => {
   const navigate = useNavigate();
 
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
+  const [inputText, setInputText] = useState("");
+
+  const activeButton = ()=>{
+    if (!inputText.trim()) {
+      // 빈 문자열 (혹은 공백만 입력한 경우) -> 이동 막기
+      return;
+    }
+    navigate(`/search?searchText=${inputText}`)
+  }
+  const activeEnter = (e)=>{
+    if(e.key === 'Enter'){
+      activeButton();
+    }
+  }
 
   return (
     <HeaderContainer>
@@ -36,6 +50,12 @@ const Header = () => {
             border: "1px solid gray",
           }}
           placeholder="책을 검색하세요"
+          onChange={(e)=>{
+            setInputText(e.target.value)
+          }}
+          onKeyDown={(e)=>{
+            activeEnter(e)
+          }}
         />
         <FontAwesomeIcon
           icon="fa-solid fa-magnifying-glass"
@@ -44,7 +64,7 @@ const Header = () => {
         />
       </div>
       <div style={{ flex: 2 }}>
-        {isLogin ? <AfterLoginHeaderUi /> : <BeforeLoginHeaderUi navigate={navigate} />}
+        {isLogin ? <AfterLoginHeaderUi navigate={navigate} /> : <BeforeLoginHeaderUi navigate={navigate} />}
       </div>
     </HeaderContainer>
   );

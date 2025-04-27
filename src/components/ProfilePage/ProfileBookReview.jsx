@@ -1,22 +1,15 @@
 import { useNavigate } from "react-router";
-import Button from "../Common/Button";
-import { BookReviewItem } from "./BookReview.style";
+import { BookReviewItem } from "../DetailPage/BookReview.style";
+import { ProfilePageWrapper } from "./ProfilePage.style";
+import { bookData } from "@/assets/data/temp";
 
-const BookReview = ({ reviewData }) => {
+const ProfileBookReview = () => {
   const navigate = useNavigate();
 
+  const reviewData = bookData[0].reviewData;
+
   return (
-    <div>
-      <div>
-        <p>독후감 리스트</p>
-        <Button
-          func={() => {
-            navigate("/write-review");
-          }}
-        >
-          독후감 쓰러가기
-        </Button>
-      </div>
+    <ProfilePageWrapper>
       {reviewData?.map((item, index) => {
         return (
           <BookReviewItem
@@ -29,8 +22,8 @@ const BookReview = ({ reviewData }) => {
           </BookReviewItem>
         );
       })}
-    </div>
+    </ProfilePageWrapper>
   );
 };
 
-export default BookReview;
+export default ProfileBookReview;
