@@ -133,8 +133,8 @@ const Calendar = ({setPickDate}) => {
       </div>
 
       <CalendarWeekWrapper>
-        {days.map((day) => (
-          <CalendarDateWrapper style={{ pointerEvents: "none" }}>
+        {days.map((day, index) => (
+          <CalendarDateWrapper style={{ pointerEvents: "none" }} key={index} >
             <span>{day}</span>
           </CalendarDateWrapper>
         ))}

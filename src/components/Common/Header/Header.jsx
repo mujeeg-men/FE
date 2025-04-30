@@ -9,7 +9,7 @@ import { useState } from "react";
 const Header = () => {
   const navigate = useNavigate();
 
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const [inputText, setInputText] = useState("");
 
   const activeButton = ()=>{

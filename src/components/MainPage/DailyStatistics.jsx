@@ -32,7 +32,7 @@ const DailyStatistics = ({ pickDate, setPickDate }) => {
       {pickDate.getFullYear()}-
       {String(pickDate.getMonth() + 1).padStart(2, "0")}-{pickDate.getDate()}
       {filteredFeelData.map((item, index) => {
-        return <FeelItem data={item} />;
+        return <FeelItem data={item} key={index} />;
       })}
     </StatisticsContainer>
   );

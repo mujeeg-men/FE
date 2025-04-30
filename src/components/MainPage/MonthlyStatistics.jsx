@@ -4,13 +4,16 @@ import BookCarousel from "./BookCarousel";
 import COLOR from "@/constants/color";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { useRecoilState } from "recoil";
+import { bestSellerDataState } from "@/store/book.store";
 
 const MonthlyStatistics = ({ feelData, setIsModal }) => {
+  const [bestSellerData, setBestSellerData] = useRecoilState(bestSellerDataState)
   return (
     <StatisticsContainer>
       <div>
         <span>읽은 책 목록</span>
-        <BookCarousel />
+        <BookCarousel data={bestSellerData} />
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
         <span>소감문</span>
@@ -37,7 +40,7 @@ const MonthlyStatistics = ({ feelData, setIsModal }) => {
       </div>
       <div style={{ overflow: "auto", height: 200 }}>
         {feelData.map((item, index) => {
-          return <FeelItem data={item} />;
+          return <FeelItem data={item} key={index} />;
         })}
       </div>
     </StatisticsContainer>

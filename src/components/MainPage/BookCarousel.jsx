@@ -11,8 +11,9 @@ import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const BookCarousel = () => {
+const BookCarousel = ({data}) => {
   const splitIntoChunk = (arr, chunk) => {
+    if(!arr) return;
     const result = [];
     for (let i = 0; i < arr.length; i += chunk) {
       result.push(arr.slice(i, i + chunk));
@@ -21,7 +22,7 @@ const BookCarousel = () => {
   };
 
   const [nowBookDataIndex, setNowBookDataIndex] = useState(0);
-  const bookCarouselData = splitIntoChunk(bookData, 5);
+  const bookCarouselData = splitIntoChunk(data, 5);
 
   const navigate = useNavigate();
 
@@ -52,7 +53,7 @@ const BookCarousel = () => {
       </ArrowButton>
 
       <BookCarouselTrack currentIndex={nowBookDataIndex}>
-        {bookCarouselData.map((chunk, i) => (
+        {bookCarouselData?.map((chunk, i) => (
           <BookCarouselWrapper key={i}>
             {chunk.map((book, idx) => (
               <BookCarouselItemWrapper
@@ -62,7 +63,7 @@ const BookCarousel = () => {
                   navigate(`/search/${book.id}`);
                 }}
               >
-                <img style={{ width: "100%" }} src={book.imageUrl} alt="" />
+                <img style={{ width: "100%" }} src={book.cover} alt="" />
                 <span>{book.title}</span>
               </BookCarouselItemWrapper>
             ))}
