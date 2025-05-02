@@ -12,7 +12,7 @@ const SearchItem = ({ data, navigate }) => {
     >
       <div style={{ display: "flex", gap: "12px" }}>
         <div>
-          <img src={data.imageUrl} style={{ width: "150px" }} alt="" />
+          <img src={data.cover} style={{ width: "150px" }} alt="" />
         </div>
         {/* 제목, 설명 */}
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>

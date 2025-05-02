@@ -47,7 +47,7 @@ const ModalSearch = () => {
                   clickedHandler(item);
                 }}
               >
-                <img src={item.imageUrl} alt="" style={{ width: 50 }} />
+                <img src={item.cover} alt="" style={{ width: 50 }} />
                 {item.title}
               </div>
             );
@@ -55,7 +55,7 @@ const ModalSearch = () => {
         </div>
       )}
       <div style={{height: 100}}>
-        <img src={pickedBook.imageUrl} alt="" style={{ width: 50 }} />
+        <img src={pickedBook.cover} alt="" style={{ width: 50 }} />
         {pickedBook.title}
       </div>
     </div>

@@ -11,7 +11,7 @@ import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const BookCarousel = ({data}) => {
+const BookCarousel = ({data = bookData}) => {
   const splitIntoChunk = (arr, chunk) => {
     if(!arr) return;
     const result = [];

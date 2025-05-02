@@ -6,11 +6,12 @@ import FeelModal from "@/components/MainPage/FeelModal/FeelModal";
 import { useEffect, useState } from "react";
 import MonthlyStatistics from "@/components/MainPage/MonthlyStatistics";
 
-import { feelData } from "@/assets/data/temp";
 import DailyStatistics from "@/components/MainPage/DailyStatistics";
 import { useRecoilState } from "recoil";
 import { bestSellerDataState } from "@/store/book.store";
 import { getBestSeller } from "@/apis/api/aladin/aladinApi";
+import { isLoginState } from "@/store/user.store";
+import { feelDataState } from "@/store/feel.store";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -20,6 +21,8 @@ const MainPage = () => {
 
   const [bestSellerData, setBestSellerData] =
     useRecoilState(bestSellerDataState);
+  const [isLogin, setIsLogin] = useRecoilState(isLoginState);
+  const [feelData, setFeelData] = useRecoilState(feelDataState)
 
   const goToPage = (name) => {
     navigate(name);
@@ -41,6 +44,11 @@ const MainPage = () => {
     };
 
     fetchData(); // 실행
+
+    // 로그인 확인
+    if (localStorage.getItem("accessToken")) {
+      setIsLogin(true)
+    }
   }, []);
 
   return (
@@ -48,13 +56,13 @@ const MainPage = () => {
       {isModal && <FeelModal closeModal={closeModal} />}
       <div style={{ display: "flex", marginBottom: 30 }}>
         <Calendar setPickDate={setPickDate} />
-        {/* {pickDate == null ? (
+        {pickDate == null ? (
           <MonthlyStatistics feelData={feelData} setIsModal={setIsModal} />
         ) : (
           <DailyStatistics pickDate={pickDate} setPickDate={setPickDate} />
-        )} */}
+        )}
       </div>
-      {/* <BookCarousel data={bestSellerData} /> */}
+      <BookCarousel data={bestSellerData} />
     </Background>
   );
 };
