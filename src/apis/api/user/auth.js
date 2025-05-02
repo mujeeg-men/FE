@@ -3,7 +3,11 @@ import { baseInstance } from "@/apis/utils/instance";
 export const login = async (email, password) => {
   try {
     // 이메일과 비밀번호를 API에 POST로 전송
-    const response = await baseInstance.post(`/login`, { userEmail: email, userPassword: password });
+    const response = await baseInstance.post(
+      `/login`,
+      { userEmail: email, password: password },
+      { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+    );
 
     // 로그인 성공 시 응답 데이터 반환 (예: 토큰, 사용자 정보 등)
     return response.data; // 응답 데이터는 response.data에 있습니다
