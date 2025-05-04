@@ -12,6 +12,7 @@ import { bestSellerDataState } from "@/store/book.store";
 import { getBestSeller } from "@/apis/api/aladin/aladinApi";
 import { isLoginState } from "@/store/user.store";
 import { feelDataState } from "@/store/feel.store";
+import { loginCheck } from "@/apis/api/user/auth";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const MainPage = () => {
     const fetchData = async () => {
       try {
         const temp = await getBestSeller(); // 비동기 함수 호출
-        console.log(temp); // 응답 확인
+        // console.log(temp); // 응답 확인
         setBestSellerData(temp); // 상태 업데이트
       } catch (error) {
         console.error("Error fetching data:", error); // 오류 처리
@@ -45,9 +46,19 @@ const MainPage = () => {
 
     fetchData(); // 실행
 
+    const tokenLogin = async()=>{
+      try {
+        const temp = await loginCheck(); // 비동기 함수 호출
+        console.log(temp); // 응답 확인
+        setIsLogin(true)
+      } catch (error) {
+        console.error("Error token login:", error); // 오류 처리
+      }
+    }
+
     // 로그인 확인
-    if (localStorage.getItem("accessToken")) {
-      setIsLogin(true)
+    if (!!localStorage.getItem("accessToken")) {
+      tokenLogin();
     }
   }, []);
 
