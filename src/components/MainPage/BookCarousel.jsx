@@ -63,8 +63,8 @@ const BookCarousel = ({data = bookData}) => {
                   navigate(`/search/${book.id}`);
                 }}
               >
-                <img style={{ width: "100%" }} src={book.cover} alt="" />
-                <span>{book.title}</span>
+                <img style={{ width: "100%" }} src={book.bookImageUrl} alt="" />
+                <span>{book.bookName}</span>
               </BookCarouselItemWrapper>
             ))}
           </BookCarouselWrapper>

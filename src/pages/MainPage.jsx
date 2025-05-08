@@ -9,7 +9,7 @@ import MonthlyStatistics from "@/components/MainPage/MonthlyStatistics";
 import DailyStatistics from "@/components/MainPage/DailyStatistics";
 import { useRecoilState } from "recoil";
 import { bestSellerDataState } from "@/store/book.store";
-import { getBestSeller } from "@/apis/api/aladin/aladinApi";
+import { getBestSeller } from "@/apis/api/book/bookApi";
 import { isLoginState } from "@/store/user.store";
 import { feelDataState } from "@/store/feel.store";
 import { loginCheck } from "@/apis/api/user/auth";
@@ -37,7 +37,7 @@ const MainPage = () => {
     const fetchData = async () => {
       try {
         const temp = await getBestSeller(); // 비동기 함수 호출
-        // console.log(temp); // 응답 확인
+        console.log(temp); // 응답 확인
         setBestSellerData(temp); // 상태 업데이트
       } catch (error) {
         console.error("Error fetching data:", error); // 오류 처리
