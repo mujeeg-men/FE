@@ -4,15 +4,36 @@ import BookReview from "@components/DetailPage/BookReview";
 
 import { bookData } from "@assets/data/temp";
 import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+import {  getBookDataByIsbn, getReviewDataById } from "@/apis/api/book/bookApi";
 
 const DetailPage = ()=>{
     const {bookId} = useParams()
-    const data = bookData.find(item => item.id===Number(bookId))
+    const [bookData, setBookData] = useState({});
+    const [reviewData, setReviewData] = useState([]);
+
+    useEffect(()=>{
+        const fetchBookDataByIsbn = async ()=>{
+            // console.log(bookId)
+            const res = await getBookDataByIsbn(bookId)
+            console.log(res.data)
+            setBookData(res.data);
+        }
+
+        const fetchReviewDataById = async ()=>{
+            const res = await getReviewDataById(bookId);
+            // console.log(res)
+            setReviewData(res)
+        }
+
+        fetchBookDataByIsbn()
+        fetchReviewDataById()
+    }, [])
 
     return (
         <Background>
-            <DetailPageInfo data={data} />
-            <BookReview reviewData={data.reviewData} />
+            <DetailPageInfo data={bookData} />
+            <BookReview reviewData={reviewData} />
         </Background>
     )
 }

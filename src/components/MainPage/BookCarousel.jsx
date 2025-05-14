@@ -60,7 +60,8 @@ const BookCarousel = ({data = bookData}) => {
                 key={idx}
                 style={{ textAlign: "center" }}
                 onClick={() => {
-                  navigate(`/search/${book.id}`);
+                  // console.log(book.bookIsbn)
+                  navigate(`/search/${book.bookIsbn}`);
                 }}
               >
                 <img style={{ width: "100%" }} src={book.bookImageUrl} alt="" />

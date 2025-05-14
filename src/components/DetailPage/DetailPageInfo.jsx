@@ -10,7 +10,7 @@ const DetailPageInfo = ({ data }) => {
   return (
     <BookDetailInfoContainer>
       <BookDetailWrapper style={{textAlign: 'center'}}>
-        <img src={data.cover} alt="" />
+        <img src={data.bookImageUrl} alt="" />
       </BookDetailWrapper>
       <BookDetailWrapper
         style={{
@@ -26,15 +26,15 @@ const DetailPageInfo = ({ data }) => {
         <span
           style={{ color: COLOR.defalutColor, fontWeight: 700, fontSize: 20 }}
         >
-          {data.title}
+          {data.bookName}
         </span>
-        <span>{data.author}</span>
-        <span style={{ color: COLOR.gray }}>{data.publisher}</span>
-        <span>{Number(data.price).toLocaleString()}원</span>
+        <span>{data.bookAuthor}</span>
+        <span style={{ color: COLOR.gray }}>{data.bookPublisher}</span>
+        <span>{Number(data.bookPrice).toLocaleString()}원</span>
         <span>
           <FontAwesomeIcon icon={faStar} color="#efef2b" /> 4.7/5.0(12)
         </span>
-        <span style={{whiteSpace: 'pre-wrap'}}>{data.detail}</span>
+        <span style={{whiteSpace: 'pre-wrap'}}>{data.bookDescription}</span>
       </BookDetailWrapper>
     </BookDetailInfoContainer>
   );
