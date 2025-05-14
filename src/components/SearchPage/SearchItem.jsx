@@ -7,24 +7,24 @@ const SearchItem = ({ data, navigate }) => {
   return (
     <SearchItemContainer
       onClick={() => {
-        navigate(`${data.id}`);
+        navigate(`${data.bookIsbn}`);
       }}
     >
       <div style={{ display: "flex", gap: "12px" }}>
         <div>
-          <img src={data.cover} style={{ width: "150px" }} alt="" />
+          <img src={data.bookImageUrl} style={{ width: "150px" }} alt="" />
         </div>
         {/* 제목, 설명 */}
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
           <span
             style={{ color: COLOR.defalutColor, fontWeight: 700, fontSize: 20 }}
           >
-            {data.title}
+            {data.bookName}
           </span>
-          <span>{data.story}</span>
-          <span>{data.author}</span>
-          <span style={{ color: COLOR.gray }}>{data.publisher}</span>
-          <span>{Number(data.price).toLocaleString()}원</span>
+          <span>{data.bookDescription}</span>
+          <span>{data.bookAuthor}</span>
+          <span style={{ color: COLOR.gray }}>{data.bookPublisher}</span>
+          <span>{Number(data.bookPrice).toLocaleString()}원</span>
           <span>
             <FontAwesomeIcon icon={faStar} color="#efef2b" /> 4.7/5.0(12)
           </span>

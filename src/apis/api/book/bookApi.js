@@ -14,3 +14,8 @@ export const getReviewDataById = async (id)=>{
     const response = await authInstance.get(`/api/review/book/${id}`)
     return response.data
 }
+
+export const getBookDataByString = async (bookName)=>{
+    const response = await authInstance.get(`/api/book/search?bookName=${bookName}`)
+    return response.data
+}
