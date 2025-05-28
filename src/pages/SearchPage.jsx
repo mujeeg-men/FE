@@ -43,6 +43,7 @@ const SearchPage = () => {
               <SearchItem
                 data={item}
                 key={item.bookIsbn}
+                navigate={navigate}
               />
             );
           })

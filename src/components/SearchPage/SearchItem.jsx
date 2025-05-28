@@ -1,7 +1,7 @@
 import COLOR from "@/constants/color";
 import { SearchItemContainer, SearchItemWrapper } from "./SearchItem.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const SearchItem = ({ data, navigate }) => {
   return (
@@ -16,11 +16,24 @@ const SearchItem = ({ data, navigate }) => {
         </div>
         {/* 제목, 설명 */}
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          <span
-            style={{ color: COLOR.defalutColor, fontWeight: 700, fontSize: 20 }}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "12px",
+            }}
           >
-            {data.bookName}
-          </span>
+            <span
+              style={{
+                color: COLOR.defalutColor,
+                fontWeight: 700,
+                fontSize: 20,
+              }}
+            >
+              {data.bookName}
+            </span>
+          </div>
           <span>{data.bookDescription}</span>
           <span>{data.bookAuthor}</span>
           <span style={{ color: COLOR.gray }}>{data.bookPublisher}</span>

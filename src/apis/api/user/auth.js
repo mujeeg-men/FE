@@ -33,3 +33,17 @@ export const loginCheck = async () => {
     throw error; // 에러를 호출한 곳으로 던져서 처리하게 함
   }
 };
+
+export const signIn = async ({ email, password, nickname }) => {
+  try {
+    const response = await baseInstance.post(`/api/user/save`, {
+      userEmail: email,
+      userPassword: password,
+      userNickname: nickname,
+    });
+    
+    return response.data;
+  } catch (error) {
+    console.error("회원가입 실패:", error.response || error.message);
+  }
+};
