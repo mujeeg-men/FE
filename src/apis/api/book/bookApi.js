@@ -23,7 +23,28 @@ export const getBookDataByString = async (bookName) => {
 };
 
 export const postSaveBook = async (isbn) => {
-    console.log(isbn)
+  // console.log(isbn)
   const response = await authInstance.post(`/api/book/save/${isbn}`);
   return response.data;
+};
+
+export const getMyMonthBookFeel = async (year, month) => {
+  console.log(year, month);
+  try {
+    const response = await authInstance.get(
+      `/api/log/by-month?year=${year}&month=${month}`
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(`월별 소감 조회 에러: `, error);
+  }
+};
+
+export const getMyDateBookFeel = async (date) => {
+  try {
+    const response = await authInstance.get(`/api/log/by-date?date=${date}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(`일별 소감 조회 에러: `, error);
+  }
 };

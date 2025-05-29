@@ -19,11 +19,41 @@ export const BookCarouselWrapper = styled.div`
 `;
 
 export const BookCarouselItemWrapper = styled.div`
-  width: 20%;
+  /* width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer; */ width: 20%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
+  text-align: center;
+
+  .image-wrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .book-title {
+    margin-top: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
 `;
 
 export const ArrowButton = styled.button`

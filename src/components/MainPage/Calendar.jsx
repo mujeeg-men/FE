@@ -15,7 +15,7 @@ import {
 import { feelData } from "@/assets/data/temp";
 import COLOR from "@/constants/color";
 
-const Calendar = ({setPickDate}) => {
+const Calendar = ({setPickedDate}) => {
   const days = ["일", "월", "화", "수", "목", "금", "토"];
   const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -148,7 +148,7 @@ const Calendar = ({setPickDate}) => {
                   key={date}
                   style={{ color: date[1] === 1 && "gray" }}
                   // 날짜 선택 부분분
-                  onClick={()=>{setPickDate(date[0])}}
+                  onClick={()=>{setPickedDate(date[0])}}
                 >
                   {/* 소감 데이터에서 현재 날짜가 있는 지 찾는 로직 */}
                   {feelData.find(

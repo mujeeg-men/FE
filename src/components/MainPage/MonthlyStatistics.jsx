@@ -6,38 +6,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useRecoilState } from "recoil";
 import { bestSellerDataState } from "@/store/book.store";
+import { myInterestBookState } from "@/store/user.store";
 
 const MonthlyStatistics = ({ feelData, setIsModal }) => {
-  const [bestSellerData, setBestSellerData] = useRecoilState(bestSellerDataState)
+  const [bestSellerData, setBestSellerData] = useRecoilState(myInterestBookState)
+
   return (
     <StatisticsContainer>
       <div>
         <span>읽은 책 목록</span>
         <BookCarousel data={bestSellerData} />
       </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <span>소감문</span>
-        <button
-          style={{
-            backgroundColor: COLOR.gray,
-            borderRadius: "50%",
-            width: 25,
-            height: 25,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            border: "none",
-            cursor: "pointer",
 
-            // color: 'white'
-          }}
-          onClick={() => {
-            setIsModal(true);
-          }}
-        >
-          <FontAwesomeIcon icon={faPlus} />
-        </button>
-      </div>
+      <span>이번 달 소감</span>
       <div style={{ overflow: "auto", height: 200 }}>
         {feelData.map((item, index) => {
           return <FeelItem data={item} key={index} />;
@@ -56,8 +37,8 @@ export const FeelItem = ({ data, index }) => {
       </div>
 
       <div>
-        <span>{data.feelContents} </span>
-        <span>{data.pageCount}P</span>
+        <span>{data.comment} </span>
+        <span>{data.pageRead}P</span>
       </div>
     </div>
   );

@@ -1,20 +1,10 @@
 import { ProfilePageWrapper } from "./ProfilePage.style";
 import BookCarousel from "../MainPage/BookCarousel";
-import { useEffect, useState } from "react";
-import { getMyInterestBook } from "@/apis/api/user/userBook";
+import { useRecoilState } from "recoil";
+import { myInterestBookState } from "@/store/user.store";
 
 const Profile = () => {
-  const [myInterestBooks, setMyInterestBook] = useState([])
-
-  useEffect(()=>{
-    const fetchMyInterestBook = async ()=>{
-      const res = await getMyInterestBook();
-      console.log(res)
-      setMyInterestBook(res.data)
-    }
-
-    fetchMyInterestBook();
-  }, [])
+  const [myInterestBook, setMyInterestBook] = useRecoilState(myInterestBookState)
 
   return (
     <ProfilePageWrapper>
@@ -23,7 +13,7 @@ const Profile = () => {
       </div>
       <div>
         <span>관심있는 책</span>
-        <BookCarousel data={myInterestBooks} />
+        <BookCarousel data={myInterestBook} />
       </div>
     </ProfilePageWrapper>
   );
