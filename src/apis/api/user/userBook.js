@@ -35,3 +35,15 @@ export const postBookFeel = async (bookId, date, pageRead, comment) => {
     throw error; // 에러를 호출한 곳으로 던져서 처리하게 함
   }
 };
+
+export const postWriteReview = async(userId, bookId, rate, reviewText, isPublic=true)=>{
+  try {
+    const response = await authInstance.post(`/api/review/save`, {userId, bookId, rate, reviewText, isPublic})
+    return response.data
+  } catch (error) {
+    console.error("소감 작성 에러:", error.response || error.message);
+
+    // 실패 시 에러 처리 로직 추가 가능 (예: 사용자에게 알림)
+    throw error; // 에러를 호출한 곳으로 던져서 처리하게 함    
+  }
+}

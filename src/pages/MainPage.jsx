@@ -74,7 +74,7 @@ const MainPage = () => {
     const fetchMyInterestBook = async () => {
       try {
         const res = await getMyInterestBook();
-        console.log(res);
+        // console.log(res);
         setMyInterestBook(res.data);
       } catch (error) {
         console.error("fetch my interest book error:", error); // 오류 처리

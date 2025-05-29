@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import Button from "../Common/Button";
 import { BookReviewItem } from "./BookReview.style";
 
-const BookReview = ({ reviewData }) => {
+const BookReview = ({ reviewData, bookData={} }) => {
   const navigate = useNavigate();
 
   return (
@@ -11,7 +11,7 @@ const BookReview = ({ reviewData }) => {
         <p>독후감 리스트</p>
         <Button
           func={() => {
-            navigate("/write-review");
+            navigate("/write-review", {bookData: bookData});
           }}
         >
           독후감 쓰러가기

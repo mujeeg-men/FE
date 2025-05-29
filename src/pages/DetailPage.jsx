@@ -41,7 +41,7 @@ const DetailPage = () => {
   return (
     <Background>
       <DetailPageInfo data={bookData} saveInterestBook={saveInterestBook} />
-      <BookReview reviewData={reviewData} />
+      <BookReview reviewData={reviewData} bookData={bookData} />
     </Background>
   );
 };
