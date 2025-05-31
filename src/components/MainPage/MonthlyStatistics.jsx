@@ -20,9 +20,9 @@ const MonthlyStatistics = ({ feelData, setIsModal }) => {
 
       <span>이번 달 소감</span>
       <div style={{ overflow: "auto", height: 200 }}>
-        {feelData.map((item, index) => {
+        {feelData.length > 0 ? feelData.map((item, index) => {
           return <FeelItem data={item} key={index} />;
-        })}
+        }) : <span style={{color: 'gray', fontSize: 14}}>이번 달 소감을 작성하지 않았습니다.</span>}
       </div>
     </StatisticsContainer>
   );
@@ -33,7 +33,7 @@ export const FeelItem = ({ data, index }) => {
     <div key={index} style={{ padding: "10px 0" }}>
       <div>
         <span>{data.bookTitle}</span>{" "}
-        <span style={{ color: COLOR.gray }}>{data.feelDate}</span>
+        <span style={{ color: COLOR.gray }}>{data.date}</span>
       </div>
 
       <div>

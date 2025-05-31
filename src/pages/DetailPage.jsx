@@ -24,7 +24,7 @@ const DetailPage = () => {
     const fetchBookDataByIsbn = async () => {
       // console.log(bookId)
       const res = await getBookDataByIsbn(bookId);
-      // console.log(res.data)
+      console.log(res.data)
       setBookData(res.data);
     };
 

@@ -11,7 +11,7 @@ const DetailPageInfo = ({ data, saveInterestBook }) => {
   return (
     <BookDetailInfoContainer>
       <BookDetailWrapper style={{ textAlign: "center" }}>
-        <img src={data.bookImageUrl} alt="" />
+        <img src={data.bookImageUrl} style={{width: '62%'}} alt="" />
       </BookDetailWrapper>
       <BookDetailWrapper
         style={{

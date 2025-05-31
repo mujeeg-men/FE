@@ -12,10 +12,10 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { feelData } from "@/assets/data/temp";
+// import { feelData } from "@/assets/data/temp";
 import COLOR from "@/constants/color";
 
-const Calendar = ({setPickedDate}) => {
+const Calendar = ({setPickedDate, feelData={}}) => {
   const days = ["일", "월", "화", "수", "목", "금", "토"];
   const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -153,7 +153,7 @@ const Calendar = ({setPickedDate}) => {
                   {/* 소감 데이터에서 현재 날짜가 있는 지 찾는 로직 */}
                   {feelData.find(
                     (item) =>
-                      getYearMonthDate(new Date(item.feelDate)) ==
+                      getYearMonthDate(new Date(item.date)) ==
                       getYearMonthDate(date[0])
                   ) != undefined ? (
                     <span

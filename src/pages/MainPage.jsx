@@ -19,6 +19,8 @@ import { feelDataState, pickedDateState } from "@/store/feel.store";
 import { loginCheck } from "@/apis/api/user/auth";
 import { getMyInterestBook } from "@/apis/api/user/userBook";
 import { formattedDate } from "@/utils/fomattedData";
+import { reviewDataState } from "@/store/review.store";
+import { getMyReviewData } from "@/apis/api/review/reviewApi";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -33,6 +35,7 @@ const MainPage = () => {
   const [myInterestBook, setMyInterestBook] =
     useRecoilState(myInterestBookState);
   const [pickedDate, setPickedDate] = useRecoilState(pickedDateState);
+  const [reviewData, setReviewData] = useRecoilState(reviewDataState)
 
   const goToPage = (name) => {
     navigate(name);
@@ -81,7 +84,7 @@ const MainPage = () => {
       }
     };
 
-    // 월별 소감 조회회
+    // 월별 소감 조회
     const fetchMyMonthBookFeel = async () => {
       try {
         const tempDate = new Date();
@@ -89,15 +92,27 @@ const MainPage = () => {
           tempDate.getFullYear(),
           tempDate.getMonth() + 1
         );
-        console.log(res);
+        // console.log(res);
         setFeelData(res.data);
       } catch (error) {
         console.error("fetch my interest book error:", error); // 오류 처리
       }
     };
 
+    // 독후감 조회
+    const fetchMyReviewData = async()=>{
+      try {
+        const res = await getMyReviewData();
+        console.log(res.data.reviews)
+        setReviewData(res.data.reviews)
+      } catch (error) {
+        console.error("fetch my review book error:", error); // 오류 처리        
+      }
+    }
+
     fetchMyInterestBook();
     fetchMyMonthBookFeel();
+    fetchMyReviewData();
   }, []);
 
   // 일별 소감 조회회
@@ -119,7 +134,7 @@ const MainPage = () => {
     <Background>
       {isModal && <FeelModal closeModal={closeModal} />}
       <div style={{ display: "flex", marginBottom: 30 }}>
-        <Calendar setPickedDate={setPickedDate} />
+        <Calendar setPickedDate={setPickedDate} feelData={feelData} />
         {pickedDate == null ? (
           <MonthlyStatistics feelData={feelData} setIsModal={setIsModal} />
         ) : (

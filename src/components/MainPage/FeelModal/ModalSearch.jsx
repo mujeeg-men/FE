@@ -24,7 +24,7 @@ const ModalSearch = ({setBookId}) => {
   const clickedHandler = (object) => {
     // console.log(object)
     setPickedBook(object);
-    setBookId(object.bookIsbn)
+    setBookId(object.bookId)
     setFilterdData([]);
   };
 

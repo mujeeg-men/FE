@@ -17,7 +17,7 @@ export const getMyInterestBook = async () => {
 };
 
 export const postBookFeel = async (bookId, date, pageRead, comment) => {
-  // console.log(bookId, date, pageRead, comment)
+  // console.log(bookId, formattedDate(date), pageRead, comment)
   try {
     // 이메일과 비밀번호를 API에 POST로 전송
     const response = await authInstance.post(`/api/log/${bookId}`, {

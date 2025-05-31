@@ -6,6 +6,7 @@ import SearchItem from "../components/SearchPage/SearchItem";
 import useSearch from "@/hooks/useSearch";
 import { useEffect, useState } from "react";
 import { getBookDataByString } from "@/apis/api/book/bookApi";
+import { getBookRate } from "@/apis/api/review/reviewApi";
 
 const SearchPage = () => {
   const navigate = useNavigate();
@@ -22,15 +23,20 @@ const SearchPage = () => {
 
   const [searchData, setSearchData] = useState([]);
 
-  useEffect(()=>{
-    const fetchSearchData = async ()=>{
+useEffect(() => {
+  const fetchSearchData = async () => {
+    try {
       const res = await getBookDataByString(searchText);
-      console.log(res.data)
-      setSearchData(res.data)
+      console.log(res.data);
+      setSearchData(res.data);
+    } catch (error) {
+      console.error("검색 데이터 가져오기 실패:", error);
     }
+  };
 
-    fetchSearchData()
-  }, [])
+  fetchSearchData();
+}, []);
+
 
   return (
     <Background>

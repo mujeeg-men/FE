@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     element: <InterestBookPage />
   },
   {
-    path: "/review-detail/:reviewId",
+    path: "/review-detail",
     element: <ReviewDetailPage />
   },
   {
