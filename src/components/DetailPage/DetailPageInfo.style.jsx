@@ -9,4 +9,8 @@ export const BookDetailInfoContainer = styled.div`
 
 export const BookDetailWrapper = styled.div`
   flex: 1;
+
+  img {
+    width: 100%
+  }
 `;

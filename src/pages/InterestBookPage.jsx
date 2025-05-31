@@ -16,7 +16,7 @@ const InterestBookPage = ()=>{
               title={item.title}
               story={item.story}
               detail={item.detail}
-              imageUrl={item.imageUrl}
+              cover={item.cover}
               navigate={navigate}
             />
           );

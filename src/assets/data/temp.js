@@ -11,7 +11,7 @@ export const bookData = [
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage,
+    cover: bookImage,
     reviewData: [
       {
         bookTitle: "노르웨이의 숲",
@@ -56,7 +56,7 @@ export const bookData = [
     price: '15000',
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage,
+    cover: bookImage,
     reviewData: [
       {
         bookTitle: "노르웨이의 숲",
@@ -101,7 +101,7 @@ export const bookData = [
     price: '15000',
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage,
+    cover: bookImage,
   },
   {
     id: 4,
@@ -112,7 +112,7 @@ export const bookData = [
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage,
+    cover: bookImage,
   },
   {
     id: 5,
@@ -123,7 +123,7 @@ export const bookData = [
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage,
+    cover: bookImage,
   },
   {
     id: 6,
@@ -131,7 +131,7 @@ export const bookData = [
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage2,
+    cover: bookImage2,
   },
   {
     id: 7,
@@ -139,7 +139,7 @@ export const bookData = [
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage2,
+    cover: bookImage2,
   },
   {
     id: 8,
@@ -147,7 +147,7 @@ export const bookData = [
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage2,
+    cover: bookImage2,
   },
   {
     id: 9,
@@ -155,7 +155,7 @@ export const bookData = [
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage2,
+    cover: bookImage2,
   },
   {
     id: 10,
@@ -163,7 +163,7 @@ export const bookData = [
     story: "이러한 내용이야~~~",
     detail:
       "이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n이러한 내용이야~~~\n",
-    imageUrl: bookImage2,
+    cover: bookImage2,
   },
 ];
 

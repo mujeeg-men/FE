@@ -1,9 +1,15 @@
+import { padTwoZero } from "@/utils/fomattedData";
 import { FeelItem } from "./MonthlyStatistics";
 import { StatisticsContainer } from "./Statistics.style";
 
-import { feelData } from "@/assets/data/temp";
+import COLOR from "@/constants/color";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { useRecoilState } from "recoil";
+import { pickedDateState } from "@/store/feel.store";
 
-const DailyStatistics = ({ pickDate, setPickDate }) => {
+const DailyStatistics = ({setIsModal, dailyFeelData }) => {
+  const [pickedDate, setPickedDate] = useRecoilState(pickedDateState);
   // 년월일 추출 함수
   const getYearMonthDate = (data) => {
     const year = data.getFullYear();
@@ -13,25 +19,43 @@ const DailyStatistics = ({ pickDate, setPickDate }) => {
     return `${year} ${month} ${date}`;
   };
 
-  const filteredFeelData = feelData.filter(
-    (data) =>
-      getYearMonthDate(new Date(data.feelDate)) === getYearMonthDate(pickDate)
-  );
-
   return (
     <StatisticsContainer>
       <div>
         <button
           onClick={() => {
-            setPickDate(null);
+            setPickedDate(null);
           }}
         >
           이전
         </button>
       </div>
-      {pickDate.getFullYear()}-
-      {String(pickDate.getMonth() + 1).padStart(2, "0")}-{pickDate.getDate()}
-      {filteredFeelData.map((item, index) => {
+      {pickedDate.getFullYear()}-{padTwoZero(String(pickedDate.getMonth() + 1))}-
+      {padTwoZero(String(pickedDate.getDate()))}
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <span>소감문</span>
+        <button
+          style={{
+            backgroundColor: COLOR.gray,
+            borderRadius: "50%",
+            width: 25,
+            height: 25,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            border: "none",
+            cursor: "pointer",
+
+            // color: 'white'
+          }}
+          onClick={() => {
+            setIsModal(true);
+          }}
+        >
+          <FontAwesomeIcon icon={faPlus} />
+        </button>
+      </div>
+      {dailyFeelData.map((item, index) => {
         return <FeelItem data={item} key={index} />;
       })}
     </StatisticsContainer>

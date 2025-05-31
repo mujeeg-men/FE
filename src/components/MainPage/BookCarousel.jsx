@@ -9,11 +9,14 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
-const BookCarousel = ({data}) => {
+const BookCarousel = ({ data = bookData }) => {
   const splitIntoChunk = (arr, chunk) => {
-    if(!arr) return;
+    if (!arr) return;
     const result = [];
     for (let i = 0; i < arr.length; i += chunk) {
       result.push(arr.slice(i, i + chunk));
@@ -60,11 +63,14 @@ const BookCarousel = ({data}) => {
                 key={idx}
                 style={{ textAlign: "center" }}
                 onClick={() => {
-                  navigate(`/search/${book.id}`);
+                  // console.log(book.bookIsbn)
+                  navigate(`/search/${book.bookIsbn}`);
                 }}
               >
-                <img style={{ width: "100%" }} src={book.cover} alt="" />
-                <span>{book.title}</span>
+                <div className="image-wrapper">
+                  <img src={book.bookImageUrl} alt={book.bookName} />
+                </div>
+                <span className="book-title">{book.bookName}</span>
               </BookCarouselItemWrapper>
             ))}
           </BookCarouselWrapper>
