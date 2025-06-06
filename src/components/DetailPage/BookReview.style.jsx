@@ -5,4 +5,7 @@ export const BookReviewItem = styled.div`
     padding: 20px;
     margin: 12px 0;
     cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center
 `
